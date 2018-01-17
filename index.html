@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validate</title>
+  <script>
+    function validates() {
+      var code = document.getElementById("nric").value;
+      if (code == "") {
+        alert("不能是空白！");
+      } else if (!isNaN(code)) {
+        alert("不能是數字！");
+      } else if (code.length != 10) {
+        alert("內容長度不正確");
+      } else {
+        if (code[1] == "1") {
+          document.getElementById("result").innerHTML = "某男驗證成功！"
+        } else if (code[1] == "2") {
+          document.getElementById("result").innerHTML = "某女驗證成功！"
+        } else {
+          document.getElementById("result").innerHTML = "身分證字號輸入有誤！"
+        }
+      };
+    };
+  </script>
+</head>
+<body>
+  
+  <div>
+    <form>
+      <input type="text" id="nric">
+      <input type="button" value="Validate" onclick="validates()">
+      <p id="result"></p>
+    </form>
+  </div>
+
+</body>
+</html>
